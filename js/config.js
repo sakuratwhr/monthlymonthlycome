@@ -1,7 +1,6 @@
 // 系統設定集中管理
-// Google Apps Script 部署完成後，再把 API 網址填到 GAS_API_URL。
 const APP_CONFIG = {
-  GAS_API_URL: "",
-  EVENT_NAME: "活動簽到系統",
+  GAS_API_URL: "https://script.google.com/macros/s/AKfycby3TccTngcW6B0n5MbRqrztJlg9nciD86m1rurTSbHSNhvFAW2H1DwQqwBvdnK8VhAu/exec",
+  EVENT_NAME: "年度內部大會",
   CHECK_INTERVAL_MS: 30000
 };
