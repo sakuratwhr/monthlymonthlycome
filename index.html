@@ -3,49 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="活動簽到與線上直播系統">
-  <title>活動簽到系統</title>
+  <meta name="description" content="線上月會簽到與直播">
+  <title>線上月會</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <main class="page">
-    <section class="card">
-      <div class="badge">活動入口</div>
+    <div class="site-container">
+      <section class="card">
+        <header class="site-header">
+          <h1 id="event-name">線上月會</h1>
+          <p class="subtitle">歡迎參加線上月會，活動開始後請輸入工號完成簽到，即可進入活動直播。</p>
+        </header>
 
-      <h1 id="event-name">活動簽到系統</h1>
-      <p class="subtitle">歡迎參加活動。系統將依活動時間顯示目前狀態，活動開始後即可輸入工號完成簽到。</p>
+        <section id="status-panel" class="status-panel" aria-live="polite">
+          <div id="status-icon" class="status-icon">⏳</div>
+          <h2 id="status-title" class="status-title">活動尚未開始</h2>
+          <p id="status-text" class="status-text">正在取得活動資訊...</p>
 
-      <section id="status-panel" class="status-panel" aria-live="polite">
-        <div id="status-icon" class="status-icon">⏳</div>
-        <h2 id="status-title" class="status-title">活動尚未開始</h2>
-        <p id="status-text" class="status-text">正在取得活動資訊...</p>
+          <div id="countdown" class="countdown hidden">
+            <div class="time-box"><span id="days" class="time-number">00</span><span class="time-label">天</span></div>
+            <div class="time-box"><span id="hours" class="time-number">00</span><span class="time-label">時</span></div>
+            <div class="time-box"><span id="minutes" class="time-number">00</span><span class="time-label">分</span></div>
+            <div class="time-box"><span id="seconds" class="time-number">00</span><span class="time-label">秒</span></div>
+          </div>
+        </section>
 
-        <div id="countdown" class="countdown hidden">
-          <div class="time-box"><span id="days" class="time-number">00</span><span class="time-label">天</span></div>
-          <div class="time-box"><span id="hours" class="time-number">00</span><span class="time-label">時</span></div>
-          <div class="time-box"><span id="minutes" class="time-number">00</span><span class="time-label">分</span></div>
-          <div class="time-box"><span id="seconds" class="time-number">00</span><span class="time-label">秒</span></div>
+        <section id="signin-section" class="form hidden">
+          <form id="signin-form">
+            <label for="emp-id">員工工號</label>
+            <input id="emp-id" type="text" placeholder="請輸入您的工號" autocomplete="off" required>
+            <button id="submit-btn" type="submit">簽到並進入直播</button>
+            <div id="message" class="message" role="status"></div>
+          </form>
+        </section>
+
+        <section id="live-section" class="live-section hidden">
+          <div class="live-heading">
+            <span class="live-dot"></span>
+            <span>活動直播</span>
+          </div>
+          <div id="player" class="video-wrapper"></div>
+        </section>
+      </section>
+
+      <section class="learning-section" aria-labelledby="learning-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="learning-title">數位學習推薦</h2>
+            <p>精選課程與學習資源，歡迎探索更多內容。</p>
+          </div>
+        </div>
+
+        <div class="ad-grid">
+          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
+          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
+          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
+          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
+          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
+          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
         </div>
       </section>
-
-      <section id="signin-section" class="form hidden">
-        <form id="signin-form">
-          <label for="emp-id">員工工號</label>
-          <input id="emp-id" type="text" placeholder="請輸入您的工號" autocomplete="off" required>
-          <button id="submit-btn" type="submit">簽到並進入直播</button>
-          <div id="message" class="message" role="status"></div>
-        </form>
-      </section>
-
-      <section id="live-section" class="status-panel hidden">
-        <div class="status-icon">●</div>
-        <h2 class="status-title">直播已開啟</h2>
-        <p class="status-text">您已完成簽到，以下為活動直播畫面。</p>
-        <div id="player" class="video-wrapper"></div>
-      </section>
-
-      <footer class="footer">V1 開發版本</footer>
-    </section>
+    </div>
   </main>
 
   <script src="js/config.js"></script>
