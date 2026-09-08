@@ -24,8 +24,8 @@ const countdownEls = {
 let countdownTimer = null;
 
 function showState(state, data = {}) {
-  const eventName = data.eventName || APP_CONFIG.EVENT_NAME;
-  els.eventName.textContent = eventName;
+  // 「線上月會」為固定前端主題，不使用後端活動名稱覆蓋。
+  els.eventName.textContent = APP_CONFIG.EVENT_NAME;
 
   els.signinSection.classList.add("hidden");
   els.liveSection.classList.add("hidden");
@@ -55,7 +55,7 @@ function showState(state, data = {}) {
   els.statusTitle.textContent = "活動尚未開始";
   els.statusText.textContent = data.startTime
     ? "活動即將開始，請稍候。"
-    : "目前為開發測試畫面，後續連接 Google Apps Script 後會顯示正式倒數。";
+    : "目前尚未設定活動開始時間。";
 
   if (data.startTime) {
     els.countdown.classList.remove("hidden");
@@ -83,7 +83,7 @@ function showLivePlayer(videoId) {
   els.player.innerHTML = `
     <iframe
       src="https://www.youtube.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0"
-      title="活動直播"
+      title="線上月會直播"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
     </iframe>
