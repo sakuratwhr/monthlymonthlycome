@@ -15,12 +15,10 @@
           <h1 id="event-name">線上月會</h1>
           <p class="subtitle">歡迎參加線上月會，活動開始後請輸入工號完成簽到，即可進入活動直播。</p>
         </header>
-
         <section id="status-panel" class="status-panel" aria-live="polite">
           <div id="status-icon" class="status-icon">⏳</div>
           <h2 id="status-title" class="status-title">活動尚未開始</h2>
           <p id="status-text" class="status-text">正在取得活動資訊...</p>
-
           <div id="countdown" class="countdown hidden">
             <div class="time-box"><span id="days" class="time-number">00</span><span class="time-label">天</span></div>
             <div class="time-box"><span id="hours" class="time-number">00</span><span class="time-label">時</span></div>
@@ -28,7 +26,6 @@
             <div class="time-box"><span id="seconds" class="time-number">00</span><span class="time-label">秒</span></div>
           </div>
         </section>
-
         <section id="signin-section" class="form hidden">
           <form id="signin-form">
             <label for="emp-id">員工工號</label>
@@ -37,16 +34,11 @@
             <div id="message" class="message" role="status"></div>
           </form>
         </section>
-
         <section id="live-section" class="live-section hidden">
-          <div class="live-heading">
-            <span class="live-dot"></span>
-            <span>活動直播</span>
-          </div>
+          <div class="live-heading"><span class="live-dot"></span><span>活動直播</span></div>
           <div id="player" class="video-wrapper"></div>
         </section>
       </section>
-
       <section class="learning-section" aria-labelledby="learning-title">
         <div class="section-heading">
           <div>
@@ -54,19 +46,16 @@
             <p>精選課程與學習資源，歡迎探索更多內容。</p>
           </div>
         </div>
-
         <div class="ad-grid">
-          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
-          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
-          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
-          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
-          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
-          <article class="ad-card"><div class="ad-placeholder">數位學習推薦<br><small>300 × 200 px</small></div></article>
+          <a class="ad-card" href="#" aria-label="數位學習推薦 1"><img src="assets/ads/20260901-黃琇琳Shirney｜AI Agent 零基礎打造個人工作流.png" alt="AI Agent 零基礎打造個人工作流"></a>
+          <a class="ad-card" href="#" aria-label="數位學習推薦 2"><img src="assets/ads/3.jpg" alt="數位學習推薦"></a>
+          <a class="ad-card" href="#" aria-label="數位學習推薦 3"><img src="assets/ads/4.jpg" alt="數位學習推薦"></a>
+          <a class="ad-card" href="#" aria-label="數位學習推薦 4"><img src="assets/ads/學習雲課程封面320200 (1).jpg" alt="學習雲課程"></a>
+          <a class="ad-card" href="#" aria-label="數位學習推薦 5"><img src="assets/ads/學習雲課程封面320200.png" alt="學習雲課程"></a>
         </div>
       </section>
     </div>
   </main>
-
   <script src="js/config.js"></script>
   <script src="js/api.js"></script>
   <script src="js/event.js"></script>
