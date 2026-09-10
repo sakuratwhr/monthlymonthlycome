@@ -47,17 +47,34 @@
           </div>
         </div>
         <div class="ad-grid">
-          <a class="ad-card" href="#" aria-label="數位學習推薦 1"><img src="assets/ads/1.jpg" alt="數位學習推薦 1"></a>
-          <a class="ad-card" href="#" aria-label="數位學習推薦 2"><img src="assets/ads/2.jpg" alt="數位學習推薦 2"></a>
-          <a class="ad-card" href="#" aria-label="數位學習推薦 3"><img src="assets/ads/3.jpg" alt="數位學習推薦 3"></a>
-          <a class="ad-card" href="#" aria-label="數位學習推薦 4"><img src="assets/ads/4.jpg" alt="數位學習推薦 4"></a>
-          <a class="ad-card" href="#" aria-label="數位學習推薦 5"><img src="assets/ads/5.jpg" alt="數位學習推薦 5"></a>
-          <a class="ad-card" href="#" aria-label="數位學習推薦 6"><img src="assets/ads/6.jpg" alt="數位學習推薦 6"></a>
+          <a class="ad-card" href="#" data-learning-id="1" aria-label="數位學習推薦 1"><img src="assets/ads/1.jpg" alt="數位學習推薦 1"></a>
+          <a class="ad-card" href="#" data-learning-id="2" aria-label="數位學習推薦 2"><img src="assets/ads/2.jpg" alt="數位學習推薦 2"></a>
+          <a class="ad-card" href="#" data-learning-id="3" aria-label="數位學習推薦 3"><img src="assets/ads/3.jpg" alt="數位學習推薦 3"></a>
+          <a class="ad-card" href="#" data-learning-id="4" aria-label="數位學習推薦 4"><img src="assets/ads/4.jpg" alt="數位學習推薦 4"></a>
+          <a class="ad-card" href="#" data-learning-id="5" aria-label="數位學習推薦 5"><img src="assets/ads/5.jpg" alt="數位學習推薦 5"></a>
+          <a class="ad-card" href="#" data-learning-id="6" aria-label="數位學習推薦 6"><img src="assets/ads/6.jpg" alt="數位學習推薦 6"></a>
         </div>
       </section>
     </div>
   </main>
   <script src="js/config.js"></script>
+  <script>
+    // 依照 js/config.js 的 LEARNING_LINKS，自動設定 1～6 張圖片的課程連結
+    document.querySelectorAll("[data-learning-id]").forEach(function(card) {
+      const id = card.getAttribute("data-learning-id");
+      const url = LEARNING_LINKS[id];
+      if (url) {
+        card.href = url;
+        card.target = "_blank";
+        card.rel = "noopener noreferrer";
+      } else {
+        card.addEventListener("click", function(event) {
+          event.preventDefault();
+        });
+        card.classList.add("no-link");
+      }
+    });
+  </script>
   <script src="js/api.js"></script>
   <script src="js/event.js"></script>
   <script src="js/app.js"></script>
